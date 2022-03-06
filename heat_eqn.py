@@ -1,0 +1,2 @@
+import firedrake
+print('hello')
