@@ -34,7 +34,7 @@ q.interpolate(b*exp(-x**2/a))   # gaussian function be^(-x^2/a)
 q_.assign(q)
 
 D = 0.01
-dt=0.005
+dt=0.1
 
 
 a = inner(w,v)*dx
