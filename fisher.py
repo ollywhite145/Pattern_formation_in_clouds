@@ -44,9 +44,9 @@ dt=0.1
 
 
 a = inner(w,v)*dx  #same LHS as heat equation
-L = ( inner(q_,v )- dt*(k*inner(q_,v)  -k*inner(inner(q_,q_),v) + D*inner(grad(q_),grad(v))) )*dx
+L = ( inner(q_,v )+ dt*(k*inner(q_,v)  -k*inner(inner(q_,q_),v) - D*inner(grad(q_),grad(v))) )*dx
 
-
+#be careful with the minus signs as an extra one appears from integration by parts
 
 try:
 
