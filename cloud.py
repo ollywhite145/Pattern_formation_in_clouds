@@ -13,7 +13,7 @@ c=5
 d=0.1
 D1=1000
 D2=0.1
-beta=2
+beta=1
 
 
 
@@ -48,8 +48,8 @@ qr_pert = rg.normal(V)
 
 qc,qr = q.split()
 
-qc.assign(qc_eq+0.01*qc_pert)
-qr.assign(qr_eq)
+qc.assign(qc_eq+0.01*qc_pert )
+qr.assign(qr_eq+0.01*qr_pert )
 
 #qc.interpolate(b*exp(-(x[0]-20)**2/a))    #again using a gaussian IC  think one of the errors is here...
 #qr.interpolate(b*exp(-(x[0]-20)**2/a))       #second variable IC
@@ -66,7 +66,7 @@ qc_,qr_ = q_.split()
 
  #constants from section 7 in the 1D case
 
-dt=0.01
+dt=0.005
 
 
 n1 = inner(w1,v1)*dx
