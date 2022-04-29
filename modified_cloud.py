@@ -73,18 +73,18 @@ qr_.assign(qr)
 #dt=0.000001
 dt = 0.000001
 
-n1 = inner(w1,v1)*dx
-L1 = ( inner(qc_,v1)  + dt*( (c-a1)*inner(qc_,v1) - a2*inner(qc_**beta,v1)*qr_**beta -D1*inner(grad(qc_),grad(v1)) )  )*dx
+n1 = w1*v1*dx
+L1 = ( qc_*v1  + dt*( (c-a1)*qc_*v1 - a2*(qc_**beta)*v1*qr_**beta -D1*inner(grad(qc_),grad(v1)) )  )*dx
 
-n2= inner(w2,v2)*dx
-L2 = ( inner(qr_,v2)  + dt*( a1*inner(qc_,v2) - d*qr_*v2 + a2*inner(qc_**beta,v2)*qr_**beta -D2*inner(grad(qr_),grad(v2)) )  )*dx
+n2= w2*v2*dx
+L2 = ( qr_*v2  + dt*( a1*qc_*v2 - d*qr_*v2 + a2*(qc_**beta)*v2*qr_**beta -D2*inner(grad(qr_),grad(v2)) )  )*dx
 
 
 a =n1+n2
 L=L1+L2
 
 
-outfile= File('cloud.pvd')	
+outfile= File('cloud.pvd')
 
 outfile.write(qc,qr)
 #time loop steps
