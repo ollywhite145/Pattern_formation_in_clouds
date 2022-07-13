@@ -91,7 +91,7 @@ outfile.write(q1,q2)
 
 t=0.0
 count = 0
-end = 200
+end = 2000
 while (t<=end):
     solve(F1==0, q1)
     qc_.assign(q1)
